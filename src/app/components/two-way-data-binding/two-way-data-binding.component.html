@@ -1,0 +1,17 @@
+<div class="aula">
+    <p>Two way data binding</p>
+    <h4>O nome é: {{name}}</h4>
+    <form>
+        <input
+            type="text"
+            [(ngModel)]="name"
+            name="nome"
+            placeholder="Digite o seu nome"
+        >
+    </form>
+    <!--
+        no app.module.ts importar o módulo FormModule
+        import { FormsModule } from '@angular/forms';
+        imports: [FormsModule],
+    -->
+</div>

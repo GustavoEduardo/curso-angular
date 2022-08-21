@@ -1,0 +1,21 @@
+<div class="aula">
+    <p [ngStyle]="{'font-size': '20px', color: color}">diretivas works!</p>
+    <p [ngClass]="classes">diretivas works!</p>
+    <p [ngClass]="underline">diretivas works!</p>
+    <br>
+    <h3>ngIf</h3>
+    <p *ngIf="name === 'Gustavo'">O nome é Gustavo (ngIf)</p>
+    <p *ngIf="exibir; else naoAutorizado">Pode exibir (ngIf)</p>
+    <ng-template #naoAutorizado>
+        <p>Não pode exibir (else do ngIf)</p>
+    </ng-template>
+    <br>
+    <h3>ngFor</h3>
+    <p>Aqui tem o <b>service</b> fake dos alunos</p>
+    <!--gerar service, importar no componente e receber no constructor-->
+    <ul>
+        <li [ngStyle]="{'list-style': 'inside'}" *ngFor="let aluno of alunos">
+            Nome: <a routerLink="/aluno/{{aluno.id}}">{{aluno.nome}}</a>  -   Idade: {{aluno.idade}}   -   <button (click)="removeAluno(aluno.id, alunos)">Remover</button>
+        </li>
+    </ul>
+</div>
