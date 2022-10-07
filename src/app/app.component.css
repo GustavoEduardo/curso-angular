@@ -1,0 +1,5 @@
+:host{
+    padding: 30px;
+}
+
+/*host é o componente. Não preciso de uma superclasse em todos*/
