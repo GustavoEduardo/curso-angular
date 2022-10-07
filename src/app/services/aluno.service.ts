@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Aluno } from '../types/Aluno';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API_PATH } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlunoService {
-  //viria de um arquivo de configuração
-  private baseURL = "http://localhost:3000/"
+  private baseURL = API_PATH
 
   constructor(private http: HttpClient) { }
 
@@ -17,8 +17,8 @@ export class AlunoService {
   }
 
   getAll(): Observable<Aluno[]>{
-    //Requisição http
-    //recebo http pelo constructor .metodo<genéric doque vao receber>
+    //Requisição http retorna um Observable
+    //recebo http pelo constructor .metodo<genéric do que vou receber>
     //Fica observando se esse genéric (no caso array de alunos) chega
     return this.http.get<Aluno[]>(this.baseURL+"alunos")
   }
